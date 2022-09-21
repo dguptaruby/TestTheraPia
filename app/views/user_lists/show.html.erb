@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @user_list.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @user_list.last_name %>
+</p>
+
+<p>
+  <strong>Is active:</strong>
+  <%= @user_list.is_active %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @user_list.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @user_list.end_date %>
+</p>
+
+<p>
+  <strong>Monthly charge:</strong>
+  <%= @user_list.monthly_charge %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user_list.email %>
+</p>
+
+<p>
+  <strong>User role:</strong>
+  <%= @user_list.user_role %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @user_list.company_id %>
+</p>
+
+<%= link_to 'Edit', edit_user_list_path(@user_list) %> |
+<%= link_to 'Back', user_lists_path %>

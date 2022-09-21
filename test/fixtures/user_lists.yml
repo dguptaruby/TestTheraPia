@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  is_active: false
+  start_date: 2022-09-21 14:42:05
+  end_date: 2022-09-21 14:42:05
+  monthly_charge: 1.5
+  email: MyString
+  user_role: MyString
+  company_id: 1
+
+two:
+  first_name: MyString
+  last_name: MyString
+  is_active: false
+  start_date: 2022-09-21 14:42:05
+  end_date: 2022-09-21 14:42:05
+  monthly_charge: 1.5
+  email: MyString
+  user_role: MyString
+  company_id: 1
