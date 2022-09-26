@@ -1,6 +1,8 @@
-<h1>Editing User Region</h1>
+<h2 class="text-center p-3 text-uppercase">Editing User Region</h2>
 
 <%= render 'form', user_region: @user_region %>
 
-<%= link_to 'Show', @user_region %> |
-<%= link_to 'Back', user_regions_path %>
+<div class="d-flex align-items-center justify-content-end my-3 pe-2">
+	<%= link_to 'Show', @user_region, class: 'p-2 text-dark rounded-3 d-block bg-transparent' %> |
+	<%= link_to 'Back', user_regions_path, class: 'p-2 text-dark rounded-3 d-block bg-transparent' %>
+</div>

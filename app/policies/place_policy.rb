@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class PlacesPolicy < ApplicationPolicy
+class PlacePolicy < ApplicationPolicy
   def index?
     user.is_admin?
   end

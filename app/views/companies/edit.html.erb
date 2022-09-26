@@ -1,6 +1,8 @@
-<h1>Editing Company</h1>
+<h2 class="text-center p-3 text-uppercase">Editing Company</h2>
 
 <%= render 'form', company: @company %>
 
-<%= link_to 'Show', @company %> |
-<%= link_to 'Back', companies_path %>
+<div class="d-flex align-items-center justify-content-end my-3 pe-2">
+	<%= link_to 'Show', @company, class: 'p-2 text-dark rounded-3 d-block bg-transparent' %> |
+	<%= link_to 'Back', companies_path, class: 'p-2 text-dark rounded-3 d-block bg-transparent' %>
+</div>

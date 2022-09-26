@@ -1,29 +1,31 @@
+<div class="row mx-0">
+  <div class="col-md-4 mx-auto border p-4 rounded-3 bg-light form-company">
+    <%= form_with(model: user_region) do |form| %>
+      <% if user_region.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(user_region.errors.count, "error") %> prohibited this user_region from being saved:</h2>
 
-<%= form_with(model: user_region) do |form| %>
-  <% if user_region.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user_region.errors.count, "error") %> prohibited this user_region from being saved:</h2>
+          <ul>
+            <% user_region.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
 
-      <ul>
-        <% user_region.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+      <div>
+         <%= form.label :user, class: 'form-label' %>
+         <%= form.collection_select :user_id, User.order(:id), :id, :first_name %>
+      </div>
 
-  <div>
-     <%= form.label :user %>
-     <%= form.collection_select :user_id, User.order(:id), :id, :first_name %>
+      <div>
+         <%= form.label :region, class: 'form-label' %>
+         <%= form.collection_select :region_id, Region.order(:id), :id, :region_name %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    <% end %>
   </div>
-
-  <div>
-     <%= form.label :region %>
-     <%= form.collection_select :region_id, Region.order(:id), :id, :region_name %>
-  </div>
-
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

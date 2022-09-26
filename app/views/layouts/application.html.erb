@@ -9,28 +9,28 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/">Therapia App</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm px-3">
+  <a class="navbar-brand fw-bold text-uppercase" href="/">Therapia App</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
+    <ul class="navbar-nav ms-auto align-items-center">
         <% if user_signed_in? %>
             <li class="nav-item">
-                <li><%= link_to "Companies", companies_path%></li>
-                <li><%= link_to "User Regions", user_regions_path%></li>
-                <li><%= link_to "Places/Nodes", places_path%></li>
-                <li><%= link_to "User list", user_lists_path%></li>
-                <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
+                <li class="nav-item px-2"><%= link_to "Companies", companies_path, class: 'nav-link h6 mb-0 text-dark'%></li>
+                <li class="nav-item px-2"><%= link_to "User Regions", user_regions_path, class: 'nav-link h6 mb-0 text-dark'%></li>
+                <li class="nav-item px-2"><%= link_to "Places/Nodes", places_path, class: 'nav-link h6 mb-0 text-dark'%></li>
+                <li class="nav-item px-2"><%= link_to "User list", user_lists_path, class: 'nav-link h6 mb-0 text-dark'%></li>
+                <li class="nav-item px-2"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link h6 mb-0 text-dark' %></li>
             </li>
         <% else %>
-            <li class="nav-item">
-                <%= link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
+            <li class="nav-item px-2">
+                <%= link_to 'Sign In', new_user_session_path, class: 'nav-link h6 mb-0 text-dark' %>
             </li>
-            <li class="nav-item">
-                <%= link_to 'Register', new_user_registration_path, class: 'nav-link' %>
+            <li class="nav-item px-2">
+                <%= link_to 'Register', new_user_registration_path, class: 'nav-link h6 mb-0 text-dark' %>
             </li>
 
   

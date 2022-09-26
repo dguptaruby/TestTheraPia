@@ -1,29 +1,31 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="d-flex align-items-center justify-content-center position-relative">
+    <h2 class="text-center p-3 text-uppercase">User Regions</h2>
+    <%= link_to 'New User Region', new_user_region_path, class: 'position-absolute end-0 bg-primary px-4 py-2 text-white rounded-3 mr-2 text-decoration-none' %>
+  </div>
+  <div class="table-responsive text-center">
+    <table class="table table-striped table-hover border border-dark">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Region</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-<h1>User Regions</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Region</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @user_regions.each do |user_region| %>
-      <tr>
-        <td><%= user_region.user_id %></td>
-        <td><%= user_region.region_id %></td>
-        <td><%= link_to 'Show', user_region %></td>
-        <td><%= link_to 'Edit', edit_user_region_path(user_region) %></td>
-        <td><%= link_to 'Destroy', user_region, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+      <tbody>
+        <% @user_regions.each do |user_region| %>
+          <tr>
+            <td><%= user_region.user_id %></td>
+            <td><%= user_region.region_id %></td>
+            <td><%= link_to 'Show', user_region %></td>
+            <td><%= link_to 'Edit', edit_user_region_path(user_region) %></td>
+            <td><%= link_to 'Destroy', user_region, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>  
 <br>
-
-<%= link_to 'New User Region', new_user_region_path %>

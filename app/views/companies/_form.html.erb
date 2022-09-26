@@ -1,46 +1,45 @@
-<%= form_with(model: company) do |form| %>
-  <% if company.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(company.errors.count, "error") %> prohibited this company from being saved:</h2>
+<div class="row mx-0">
+  <div class="col-md-5 mx-auto border p-4 rounded-3 bg-light form-company">
+    <%= form_with(model: company) do |form| %>
+      <% if company.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(company.errors.count, "error") %> prohibited this company from being saved:</h2>
 
-      <ul>
-        <% company.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+          <ul>
+            <% company.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="field">
+        <%= form.label :company_name, class: 'form-label' %>
+        <%= form.text_field :company_name, class: 'form-control' %>
+      </div>
 
-  <div class="field">
-    <%= form.label :company_name %>
-    <%= form.text_field :company_name %>
+      <div>
+         <%= form.label :country, class: 'form-label' %>
+         <%= form.collection_select :country_id, Country.order(:id), :id, :contry_name %>
+      </div>
+      <div>
+         <%= form.label :company_name, class: 'form-label' %>
+         <%= form.collection_select :state_id, State.order(:id), :id, :state_name %>
+      </div>
+      <div>
+         <%= form.label :company_name, class: 'form-label' %>
+         <%= form.collection_select :city_id, City.order(:id), :id, :city_name %>
+      </div>
+      <div class="field">
+        <%= form.label :post_code, class: 'form-label' %>
+        <%= form.text_field :post_code, class: 'form-control' %>
+      </div>
+      <div class="field">
+        <%= form.label :is_active, class: 'form-label' %>
+        <%= form.check_box :is_active %>
+      </div>
+      <div class="actions ">
+        <%= form.submit %>
+      </div>
+    <% end %>
   </div>
-
-  <div>
-     <%= form.label :country %>
-     <%= form.collection_select :country_id, Country.order(:id), :id, :contry_name %>
-  </div>
-<div>
-     <%= form.label :company_name %>
-     <%= form.collection_select :state_id, State.order(:id), :id, :state_name %>
-  </div>
-<div>
-     <%= form.label :company_name %>
-     <%= form.collection_select :city_id, City.order(:id), :id, :city_name %>
-  </div>
-
-
-  <div class="field">
-    <%= form.label :post_code %>
-    <%= form.text_field :post_code %>
-  </div>
-
-  <div class="field">
-    <%= form.label :is_active %>
-    <%= form.check_box :is_active %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
