@@ -13,6 +13,8 @@ class CompaniesController < ApplicationController
                  else
                    Company.where(id: current_user.company_id)
                  end
+    @companies = @companies.ransack(company_name_cont: params[:q]).result      
+
   end
 
   # GET /companies/1 or /companies/1.json

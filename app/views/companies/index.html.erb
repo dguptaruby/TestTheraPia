@@ -4,12 +4,21 @@
     <h2 class="text-center p-3 text-uppercase">Companies</h2>
     <%= link_to 'New Company', new_company_path, class: 'position-absolute end-0 bg-primary px-4 py-2 text-white rounded-3 mr-2 text-decoration-none' %>
   </div>
+  <div>
+    <%= search_form_for @companies, remote: true do |f| %>      
+      <%= f.label :company_name_cont, 'comapny name' %>  
+      <%= f.search_field :company_name_cont %>  
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
+  </br>
   <div class="table-responsive text-center">
     <table class="table table-striped table-hover border border-dark">
       <thead>
         <tr>
           <th>Company name</th>
-          <th>Post code</th>
+          <th>Postal code</th>
           <th>Is active</th>
           <th colspan="3"></th>
         </tr>
